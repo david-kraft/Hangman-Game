@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <!-- Universal Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Centers, gives x margin to box of content -->
+        <div class="container mx-auto px-3" <a class="navbar-brand" href="#">David Kraft</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">About Me
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Sitter Sanity!</h1>
+            <p>A hangman-style game where you make animals to distract the baby. Don‘t let the baby start crying!</p>
+        </div>
+        <div class="row">
+
+            <!-- Left columnn -->
+            <div class="col-sm-12 col-md-4">
+
+                <!-- Status alert -->
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="alert alert-info" id="directions">
+                            <strong>Directions: Click/Tap the baby to start!</strong>
+                        </div>
+                        <div class="alert alert-success" id="guessesLeftAlert">
+                            <strong>
+                                <span id="numberGuessesLeft">12</span> Guesses Remain</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Picture -->
+                <img class="rounded-corners img-fluid" id="babyPicture" src="assets/images/portrait-of-a-baby-boy.jpg" alt="Happy baby">
+
+            </div>
+            <!-- End left column -->
+
+            <!-- Right column -->
+            <div class="col-xs-12 col-md-8">
+
+                <div class="alert alert-light" role="alert">
+                    <h1 class="alert-heading" id="current-word"><span class="puzzle-letter">Pat baby now!</span></h1>
+                </div>
+
+                <!-- Letter Bank -->
+                <div id="letterBank"></div>
+                <!-- <button onclick="choice('A')" class="btn btn-light btn-lg rounded-circle m-1" id="a-button">
+                    <span class="bank-letter">A</span>
+                </button>
+                <button onclick="choice('B')" class="btn btn-light btn-lg rounded-circle m-1" id="b-button">
+                    <span class="bank-letter">B</span>
+                </button>
+                <button onclick="choice('C')" class="btn btn-light btn-lg rounded-circle m-1" id="c-button">
+                    <span class="bank-letter">C</span>
+                </button>
+                <button onclick="choice('D')" class="btn btn-light btn-lg rounded-circle m-1" id="d-button">
+                    <span class="bank-letter">D</span>
+                </button>
+                <button onclick="choice('E')" class="btn btn-light btn-lg rounded-circle m-1" id="e-button">
+                    <span class="bank-letter">E</span>
+                </button>
+                <button onclick="choice('F')" class="btn btn-light btn-lg rounded-circle m-1" id="f-button">
+                    <span class="bank-letter">F</span>
+                </button>
+                <button onclick="choice('G')" class="btn btn-light btn-lg rounded-circle m-1" id="g-button">
+                    <span class="bank-letter">G</span>
+                </button>
+                <button onclick="choice('H')" class="btn btn-light btn-lg rounded-circle m-1" id="h-button">
+                    <span class="bank-letter">H</span>
+                </button>
+                <button onclick="choice('I')" class="btn btn-light btn-lg rounded-circle m-1" id="i-button">
+                    <span class="bank-letter">I</span>
+                </button>
+                <button onclick="choice('J')" class="btn btn-light btn-lg rounded-circle m-1" id="j-button">
+                    <span class="bank-letter">J</span>
+                </button>
+                <button onclick="choice('K')" class="btn btn-light btn-lg rounded-circle m-1" id="k-button">
+                    <span class="bank-letter">K</span>
+                </button>
+                <button onclick="choice('L')" class="btn btn-light btn-lg rounded-circle m-1" id="l-button">
+                    <span class="bank-letter">L</span>
+                </button>
+                <button onclick="choice('M')" class="btn btn-light btn-lg rounded-circle m-1" id="m-button">
+                    <span class="bank-letter">M</span>
+                </button>
+                <button onclick="choice('N')" class="btn btn-light btn-lg rounded-circle m-1" id="n-button">
+                    <span class="bank-letter">N</span>
+                </button>
+                <button onclick="choice('O')" class="btn btn-light btn-lg rounded-circle m-1" id="o-button">
+                    <span class="bank-letter">O</span>
+                </button>
+                <button onclick="choice('P')" class="btn btn-light btn-lg rounded-circle m-1" id="p-button">
+                    <span class="bank-letter">P</span>
+                </button>
+                <button onclick="choice('Q')" class="btn btn-light btn-lg rounded-circle m-1" id="q-button">
+                    <span class="bank-letter">Q</span>
+                </button>
+                <button onclick="choice('R')" class="btn btn-light btn-lg rounded-circle m-1" id="r-button">
+                    <span class="bank-letter">R</span>
+                </button>
+                <button onclick="choice('S')" class="btn btn-light btn-lg rounded-circle m-1" id="s-button">
+                    <span class="bank-letter">S</span>
+                </button>
+                <button onclick="choice('T')" class="btn btn-light btn-lg rounded-circle m-1" id="t-button">
+                    <span class="bank-letter">T</span>
+                </button>
+                <button onclick="choice('U')" class="btn btn-light btn-lg rounded-circle m-1" id="u-button">
+                    <span class="bank-letter">U</span>
+                </button>
+                <button onclick="choice('V')" class="btn btn-light btn-lg rounded-circle m-1" id="v-button">
+                    <span class="bank-letter">V</span>
+                </button>
+                <button onclick="choice('w')" class="btn btn-light btn-lg rounded-circle m-1" id="w-button">
+                    <span class="bank-letter">W</span>
+                </button>
+                <button onclick="choice('x')" class="btn btn-light btn-lg rounded-circle m-1" id="x-button">
+                    <span class="bank-letter">X</span>
+                </button>
+                <button onclick="choice('y')" class="btn btn-light btn-lg rounded-circle m-1" id="y-button">
+                    <span class="bank-letter">Y</span>
+                </button>
+                <button letter="Z" onclick="choice('z')" class="letter-button btn btn-light btn-lg rounded-circle m-1" id="z-button">
+                    <span class="bank-letter">Z</span>
+                </button> -->
+                <!-- End of letter bank -->
+
+            </div>
+            <!-- End of right column -->
+
+        </div>
+        <!-- End of row -->
+
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Copyright ©</span>
+        </div>
+    </footer>
+
+    <script type="javascript" src="assets/javascript/game.js"></script>
+</body>
+
+</html>
