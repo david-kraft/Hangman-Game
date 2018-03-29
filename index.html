@@ -182,6 +182,26 @@
     </footer>
 
     <script type="javascript" src="assets/javascript/game.js"></script>
+    <script>document.getElementById("babyPicture").onclick = function() {startGame()};
+
+            function startGame(){
+            
+                // Display the letter bank
+            
+                    // assign the upper-case alphabet to a string variable
+                    var alphabetString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                    console.log ("alphabetString = " + alphabetString);
+            
+                    // Split alphabet into an array with one letter per item
+                    var alphabetArray = alphabetString.split("");
+                    console.log ("alphabetArray = " + alphabetArray);
+            
+                    // Displays the letter bank
+                    for (i = 0; i < alphabetString.length; i++) {
+                        document.getElementById("letterBank").innerHTML += '<button onclick="choice("' + alphabetArray[i] + '")" class="btn btn-light btn-lg rounded-circle m-1" id="' + alphabetArray[i] + '-button"><span class="bank-letter">' + alphabetArray[i] + '</span>'
+            
+                    }}
+                    </script>
 </body>
 
 </html>
